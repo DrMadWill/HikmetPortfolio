@@ -1,0 +1,37 @@
+﻿@model Portfolio
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="main-content-inner">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <!-- Textual inputs start -->
+                <div class="col-12 mt-5">
+                    <div class="card">
+                        <form method="post" class="card-body">
+                            <h4 class="header-title">Create Portfolio</h4>
+                            <div class="form-group">
+                                <label asp-for="Name" class="col-form-label">Name</label>
+                                <input class="form-control" asp-for="Name" type="text">
+                                <span class="text-danger" asp-validation-for="Name"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Image" class="col-form-label">Image</label>
+                                <input class="form-control" asp-for="Image" type="url">
+                                <span class="text-danger" asp-validation-for="Image"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Link" class="col-form-label">Link</label>
+                                <input class="form-control" asp-for="Link" type="url">
+                                <span class="text-danger" asp-validation-for="Link"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Textual inputs end -->
+            </div>
+        </div>
+    </div>
+</div>

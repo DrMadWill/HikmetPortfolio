@@ -1,0 +1,138 @@
+#about {
+    margin: 100px 0;
+
+    .navbar__title {
+        width: 300px;
+        border-bottom: 2px solid $c-black;
+        padding: $padding 0;
+        position: relative;
+
+
+        h1 {
+            font: {
+                weight: $font-weight-800;
+                size: $font-size-xl
+            }
+        }
+
+        &::after {
+            @include line();
+        }
+    }
+
+    img {
+        width: 370px;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    p {
+        margin: $margin-xl 0;
+        width: 95%;
+        line-height: $line-height-xl;
+    }
+
+
+    .about__main {
+        display: none;
+    }
+
+}
+
+@media (max-width: $breakpoint-sm) {
+    #about {
+        img:first-child {
+            display: none;
+        }
+
+        .about__main {
+            display: block;
+            width: 100%;
+            height: 250px;
+        }
+
+        h1 {
+            font-size: 25px !important;
+        }
+
+        p {
+            font-size: 12px !important;
+        }
+
+        .row {
+            display: block !important;
+
+            >div {
+                margin-bottom: $margin-xl;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+    #about {
+        img:first-child {
+            display: none;
+        }
+
+        .about__main {
+            display: block;
+            width: 100%;
+            height: 350px;
+        }
+
+        h1 {
+            font-size: $font-size-lg;
+        }
+
+        .row {
+            display: block !important;
+
+            >div {
+                margin-bottom: $margin-xl;
+            }
+        }
+
+
+    }
+
+
+
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    #about {
+        img:first-child {
+            display: none;
+        }
+
+        .about__main {
+            display: block;
+            width: 720px;
+            height: 350px;
+        }
+
+        h1 {
+            font-size: $font-size-lg;
+        }
+
+        .row {
+            display: block !important;
+
+            >div {
+                margin-bottom: $margin-xl;
+            }
+        }
+
+
+    }
+
+
+
+}

@@ -1,0 +1,186 @@
+﻿@inject Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager;
+@{
+    IdentityUser user = null;
+    if (User.Identity.IsAuthenticated)
+    {
+        user = userManager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name);
+    }
+}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hikmət => Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/dist/css/main.min.css">
+    <link rel="icon" type="image/png" href="~/resources/img/raja.png">
+    <link rel="shortcut icon" type="image/png" href="~/resources/img/raja.png">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="~/https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/assets/css/typography.css">
+    <link rel="stylesheet" href="~/assets/css/default-css.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    @RenderSection("header",false)
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="/"><img src="~/assets/images/icon/logo.png" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li class="active">
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
+                                <ul class="collapse">
+                                    <li><a asp-controller="Portfolios" asp-action="Index">Portfolio</a></li>
+                                    <li><a asp-controller="OnlineAddress" asp-action="Index">OnlineAdress</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-controller="Account" asp-action="ChangePassword"> <i class="ti-key"></i> Change Password </a></li>
+                            <li><a asp-controller="Addresses" asp-action="Index"> <i class="ti-id-badge"></i> Change Address</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+                    <!-- profile info & task notification -->
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Dashboard</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="~/resources/img/i.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Hikmet Recebli <i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
+                                <a class="dropdown-item" asp-controller="Account" asp-action="LogOut">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if(TempData["Messange"] != null)
+            {
+                <div class="alert alert-primary pb-lg-2" role="alert">
+                    <span id="m-text">@TempData["Messange"].ToString()</span> 
+                </div>
+            }
+
+           
+            @RenderBody()
+        </div>
+        <!-- main content area end -->
+        <!-- footer area start-->
+        <footer>
+            <div class="footer-area">
+                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+            </div>
+        </footer>
+        <!-- footer area end-->
+    </div>
+    <!-- page container area end -->
+    <!-- offset area start -->
+    <!-- offset area end -->
+    <!-- jquery latest version -->
+    <script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/metisMenu.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script>
+        $(document).ready(()=>{
+            let alert = $(".alert");
+            let mtext= $("#m-text")
+            setTimeout(function() {
+                mtext.animate({
+                    "opacity": 0,
+                    "display":"none"
+                })
+                alert.slideUp()
+            },3000)
+        })
+    </script>
+
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="~/assets/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="~/assets/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="~/assets/js/plugins.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    @RenderSection("script",false)
+</body>
+
+</html>

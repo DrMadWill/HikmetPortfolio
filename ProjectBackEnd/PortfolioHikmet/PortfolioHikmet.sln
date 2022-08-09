@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikmetRecebli", "HikmetRecebli\HikmetRecebli.csproj", "{56017463-7010-4FB1-B018-D862FC31C62B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56017463-7010-4FB1-B018-D862FC31C62B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56017463-7010-4FB1-B018-D862FC31C62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56017463-7010-4FB1-B018-D862FC31C62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56017463-7010-4FB1-B018-D862FC31C62B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63382273-8652-4440-9B7A-3DE8F0BCF094}
+	EndGlobalSection
+EndGlobal

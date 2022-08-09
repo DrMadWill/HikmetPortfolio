@@ -1,0 +1,20 @@
+#footer {
+    background-color: #eff0f1;
+    margin-top: $margin-xxl;
+
+    img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
+
+    p {
+        font-weight: $font-weight-500;
+
+        a {
+            color: rgb(66, 66, 66);
+        }
+    }
+
+
+}

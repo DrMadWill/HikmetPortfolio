@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IndexVM
+<section id="main">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-7 col-xs-8 flex align-items-center">
+                <div>
+                    <h1>I'm Hikmat Rajabli</h1>
+                    <p>Front-end developer</p>
+                </div>
+            </div>
+            <div class="col-5 col-xs-4 flex justify-content-end">
+                <img class="" src="~/resources/img/i.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row gap-100">
+            <div class="col-4 col-md-12 col-sm-12 col-xs-12">
+                <img src="~/resources/img/about.png" alt="">
+                <img class="about__main" src="~/resources/img/about-main.png" alt="">
+            </div>
+            <div class="col-8  col-md-12 col-sm-12 col-xs-12">
+                <div class="navbar__title">
+                    <h1>About Me</h1>
+                </div>
+                <p>
+                    For instance, whenever I go back to the guest house during the morning to copy out the contract,
+                    these gentlemen are always still sitting there eating their breakfasts. I ought to just try that
+                    with my boss; I'd get kicked out on the spot. <br><br>
+
+                    But who knows, maybe that would be the best thing for me. He'd fall right off his desk! And it's
+                    a funny sort of business to be sitting up there at your desk,
+                    talking down at your subordinates.
+                </p>
+
+                <div class="web__social">
+                    @foreach (var item in Model.Addresses.FirstOrDefault()?.OnlineAddresses)
+                   {
+                        <a href="@item.Link" target="_blank">
+                            @Html.Raw(@item.Icon)
+                        </a>
+                   }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <div class="row gap-50">
+            <div class="col-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="skills__icon">
+                    <img src="~/resources/icons/html.svg" alt="">
+                    <img src="~/resources/icons/css.svg" alt="">
+                </div>
+                <div class="skills__content border-g">
+                    <h1>Convert design to html and css</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio natus, impedit consectetur
+                        doloribus corporis, sint, nisi magnam tempora facilis aut repellendus nobis non eaque iure.
+                        Nemo sed sequi delectus rerum est magni pariatur nulla placeat?
+                    </p>
+                </div>
+            </div>
+            <div class="col-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="skills__icon">
+                    <img src="~/resources/icons/js.svg" alt="">
+                    <img src="~/resources/icons/react.svg" alt="">
+                </div>
+                <div class="skills__content  border-g">
+                    <h1>Adding functionality to website</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio natus, impedit consectetur
+                        doloribus corporis, sint, nisi magnam tempora facilis aut repellendus nobis non eaque iure.
+                        Nemo sed sequi delectus rerum est magni pariatur nulla placeat?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolios">
+    <div class="container">
+        <div class="portfolios__header">
+            <h1>Portfolios</h1>
+        </div>
+        <div class="row flex-wrap justify-content-between">
+            @foreach (var item in Model.Portfolios)
+            {
+                <div class="portfolios__item">
+                    <a href="@item.Link">
+                        <img src="@item.Image"
+                         alt="">
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section id="address">
+    <div class="container">
+        <div class="address__header">
+            <h1>Address</h1>
+        </div>
+        <div class="row">
+            <div class="address__container">
+                <p>@(Model.Addresses.FirstOrDefault()?.Location)</p>
+                <p>@(Model.Addresses.FirstOrDefault()?.Number )</p>
+                <p>@(Model.Addresses.FirstOrDefault()?.Email)</p>
+                <div class="web__social">
+                    @foreach (var item in Model.Addresses.FirstOrDefault()?.OnlineAddresses)
+                   {
+                        <a href="@item.Link" target="_blank">
+                            @Html.Raw(@item.Icon)
+                        </a>
+                   }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,167 @@
+#skills {
+
+    .container {
+        >h1 {
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            font: {
+                weight: $font-weight-700;
+                size: $font-size-xl;
+            }
+        }
+    }
+
+    .skills__icon {
+        width: 100%;
+        display: flex;
+        gap: $gap-xl;
+        position: relative;
+        margin-bottom: $margin-xl;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        &::after {
+            content: '';
+            width: 72%;
+            height: 1px;
+            background-color: $c-gray;
+            top: 50%;
+            right: 0;
+            position: absolute;
+        }
+    }
+
+    .skills__content {
+        margin-top: $margin-md;
+        padding: $padding $padding-md;
+
+        h1 {
+            text-transform: uppercase;
+
+            font: {
+                weight: $font-weight-700;
+                size: $font-size-lg;
+            }
+        }
+
+        p {
+            margin-top: $margin-md;
+            line-height: $line-height-xl;
+        }
+    }
+}
+
+@media (min-width: 300px) and (max-width: 460px) {
+    #skills {
+        .skills__icon {
+            &::after {
+
+                width: 60% !important;
+
+            }
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .skills__content {
+            h1 {
+                font-size: $font-size;
+                line-height: $line-height-xl;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .row {
+            display: block;
+
+            >div:first-child {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+@media (min-width: 460px) and (max-width: $breakpoint-sm) {
+    #skills {
+        .skills__icon {
+            &::after {
+
+                width: 65% !important;
+
+            }
+        }
+
+        .row {
+            display: block;
+
+            >div:first-child {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+    #skills {
+        .skills__icon {
+            &::after {
+
+                width: 73%;
+
+            }
+        }
+
+        .row {
+            display: block;
+
+            >div:first-child {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    #skills {
+        .skills__icon {
+            &::after {
+
+                width: 78%;
+
+            }
+        }
+
+        .row {
+            display: block;
+
+            >div:first-child {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+    #skills {
+        .skills__icon {
+
+
+            &::after {
+
+                width: 65%;
+
+            }
+        }
+    }
+}

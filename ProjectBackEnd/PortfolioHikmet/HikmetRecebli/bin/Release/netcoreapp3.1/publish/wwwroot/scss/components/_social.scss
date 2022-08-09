@@ -1,0 +1,18 @@
+.web__social {
+    a {
+        font-size: $font-size-xl;
+        color: $c-dark;
+        margin-right: $margin;
+        text-decoration: none;
+        border: 1px solid rgba(0, 0, 0, 0);
+        transition: $transition-200ms;
+        padding: $padding-md;
+
+        &:hover {
+            border: 1px solid $c-gray;
+
+        }
+    }
+
+    padding: $padding 0;
+}

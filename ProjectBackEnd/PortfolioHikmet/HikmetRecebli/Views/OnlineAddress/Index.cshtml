@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+
+@model IList<OnlineAddress>
+
+
+@section header{
+    <!-- Start datatable css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+}
+
+
+
+    <div class="main-content-inner">
+        <div class="row">
+            <!-- Primary table start -->
+            <div class="col-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between my-2">
+                             <h3 class="header-title">Porfolios</h3>
+                            <a asp-controller="OnlineAddress" asp-action="Create" class="btn btn-outline-success"><span class="ti-plus"></span></a>
+                        </div>
+                       
+                        <div class="data-tables datatable-primary">
+                            <table id="dataTable2" class="text-center">
+                                <thead class="text-capitalize">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Link</th>
+                                        <th>Icon</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td><a href="@item.Link" class="btn btn-outline-primary">Sorce Link</a></td>
+                                        <td><button class="btn btn-outline-info img-open-modal">@Html.Raw(item.Icon)</button></td>
+                                        <td>
+                                            <a asp-controller="OnlineAddress" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-warning"><span class="ti-pencil-alt"></span></a>
+                                            <a asp-controller="OnlineAddress" onclick="return confirm('Are you sure delete ?')" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><span class="ti-trash"></span></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Primary table end -->
+    </div>
+</div>
+
+
+
+
+
+
+@section script{
+    
+    <script>
+
+        $(document).ready( function () {
+
+            $('#dataTable2').DataTable({
+                responsive: true
+            });
+            //$('#myTable').DataTable();
+        } );
+        
+    </script>
+
+    <!-- Start datatable js -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+}

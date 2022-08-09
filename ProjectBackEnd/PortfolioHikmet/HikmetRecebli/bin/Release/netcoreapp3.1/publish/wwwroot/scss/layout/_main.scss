@@ -1,0 +1,96 @@
+#main {
+    background-color: $c-dark;
+
+    img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    h1 {
+        min-width: 100%;
+        font-size: 35px;
+        color: $c-white;
+        text-transform: uppercase;
+        margin-bottom: $margin-lg;
+        line-height: $line-height-lg;
+    }
+
+    p {
+        font-size: $font-size-lg;
+        color: $c-white;
+        text-transform: uppercase;
+        line-height: $line-height-lg;
+    }
+}
+
+@media (max-width: 380px) {
+    #main {
+        img {
+            width: 200px;
+            height: 200px;
+
+        }
+
+        h1 {
+            font-size: 14px;
+            margin-bottom: 0;
+
+        }
+
+        p {
+            font-size: 11px;
+        }
+    }
+}
+
+
+@media (min-width: 380px) and (max-width: $breakpoint-sm) {
+    #main {
+        img {
+            width: 200px;
+            height: 200px;
+
+        }
+
+        h1 {
+            font-size: $font-size-lg;
+            margin-bottom: $margin-xs;
+
+
+        }
+
+        p {
+            font-size: $font-size-md;
+
+        }
+    }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+    #main {
+        img {
+            width: 250px;
+            height: 250px;
+        }
+
+        h1 {
+            font-size: $font-size-xl;
+
+        }
+
+        p {
+            font-size: $font-size-lg;
+
+        }
+    }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    #main {
+        img {
+            width: 350px;
+            height: 350px;
+        }
+    }
+}

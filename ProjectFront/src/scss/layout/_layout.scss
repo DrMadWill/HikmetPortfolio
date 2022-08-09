@@ -1,0 +1,21 @@
+html {
+  font: {
+    size: $size;
+    family: $font-montserrat;
+  }
+}
+
+.container {
+  width: 1140px;
+  margin: 0px auto;
+}
+
+.row {
+  display: flex;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: ((100% / 12) * #{$i})
+  }
+}

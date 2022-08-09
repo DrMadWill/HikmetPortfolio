@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+@model MessengeVM
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@Model.PageTitle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="~/resources/img/raja.png">
+    <link rel="shortcut icon" type="image/png" href="~/resources/img/raja.png">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/assets/css/typography.css">
+    <link rel="stylesheet" href="~/assets/css/default-css.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link href="~/img/uversalfilo.png" rel="icon">
+    <link href="~/img/uversalfilo.png" rel="apple-touch-icon">
+
+    <style>
+        body{
+            overflow:hidden;
+        }
+        #messannge{
+        font-size: 50px !important;
+        font-weight: 800;
+        color: #686cdc;
+        margin-bottom: 28px;
+        text-shadow: -3px -3px 0 #ffffff, 3px -3px 0 #ffffff, -3px 3px 0 #ffffff, 3px 3px 0 #ffffff, 4px 4px 0 #6569dc, 5px 5px 0 #6569dc, 6px 6px 0 #6569dc, 7px 7px 0 #6569dc;
+        font-family: 'lato', sans-serif;
+    }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+
+    <div class="error-area ptb--100 text-center">
+        <div class="container">
+            <div class="error-content">
+                <h4 id="messannge">@Model.Mesange</h4>
+                <a asp-controller="Portfolios" asp-action="Index">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+    <!-- jquery latest version -->
+    <script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/metisMenu.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".form-gp input").each(function (x) {
+                if ($(this).val() != "") {
+                    $(this).focus()
+                }
+            })
+        })
+    </script>
+
+    <!-- others plugins -->
+    <script src="~/assets/js/plugins.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</body>
+
+</html>
